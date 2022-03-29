@@ -27,25 +27,20 @@ if (galleryImages) {
          newImg.setAttribute('src', 'img/' + setNewImgUrl);
          newImg.setAttribute('id', 'current-img');
 
-         newImg.onload = () => {
-            let imgWidth = newImg.width;
-            let calcImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+         let prevBtn = document.createElement('a');
+         let prevBtnText = document.createTextNode('Prev');
+         prevBtn.appendChild(prevBtnText);
+         container.appendChild(prevBtn);
+         prevBtn.setAttribute('class', 'img-btn-prev');
+         prevBtn.setAttribute('onclick', 'changeImg(0)');
 
-            let prevBtn = document.createElement('a');
-            let prevBtnText = document.createTextNode('Prev');
-            prevBtn.appendChild(prevBtnText);
-            container.appendChild(prevBtn);
-            prevBtn.setAttribute('class', 'img-btn-prev');
-            prevBtn.setAttribute('onclick', 'changeImg(0)');
-
-            let nextBtn = document.createElement('a');
-            let nextBtnText = document.createTextNode('Next');
-            nextBtn.appendChild(nextBtnText);
-            nextBtn.innerText = 'Next';
-            container.appendChild(nextBtn);
-            nextBtn.setAttribute('class', 'img-btn-next');
-            nextBtn.setAttribute('onclick', 'changeImg(1)');
-         };
+         let nextBtn = document.createElement('a');
+         let nextBtnText = document.createTextNode('Next');
+         nextBtn.appendChild(nextBtnText);
+         nextBtn.innerText = 'Next';
+         container.appendChild(nextBtn);
+         nextBtn.setAttribute('class', 'img-btn-next');
+         nextBtn.setAttribute('onclick', 'changeImg(1)');
       });
    });
 }
