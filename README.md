@@ -1,4 +1,6 @@
-## Image gallery
+# Image gallery
+
+![GitHub](https://img.shields.io/github/license/thomasluizon/image-gallery)
 
 Made with HTML, CSS and JavaScript
 
